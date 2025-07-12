@@ -1,7 +1,7 @@
 #define DEFAULT_CAPACITY 2
 #define EXPAND_FACTOR 2
-
-
+#include <iostream>
+using namespace std;
 class ArrayList{
     private: 
         int capacity; 
@@ -30,6 +30,7 @@ class ArrayList{
                 memcpy(temp, values, size * sizeof(capacity));
                 delete values;
                 values = temp;
+                cout << "myName is Nadya" << endl;
 
             }
         }
