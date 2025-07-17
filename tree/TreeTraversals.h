@@ -1,4 +1,5 @@
 #include "tree.h"
+#include <queue>
 
 class TreeTraversals{
     public:
@@ -27,5 +28,27 @@ class TreeTraversals{
         post_order(node->left);
         post_order(node->right);
         node->visit();
+    }
+
+    void level_order(TreeNode* node){
+        queue<TreeNode*> q;
+
+        if(node != NULL){
+            q.push(node);
+        }
+        
+        while(!q.empty()){
+            TreeNode* topNode = q.front();
+            topNode->visit();
+
+            if(node->left != NULL){
+                q.push(topNode->left);   
+            }
+            if(node->right != NULL){
+                q.push(topNode->right);
+            }
+
+            q.pop();
+        }
     }
 };

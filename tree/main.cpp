@@ -18,4 +18,6 @@ int main(){
     traversal.in_order(root);
     cout << endl;
     traversal.post_order(root);
+    cout << endl;
+    traversal.level_order(root);
 }
