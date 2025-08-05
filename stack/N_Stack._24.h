@@ -16,6 +16,11 @@ class Stack{
         top = top->next;
         delete topNode;
         return output;
-
+    }
+    void add(int value){
+        Node* newNode = new Node(value);
+        top->next = newNode;
+        top = newNode;
+        
     }
 };
