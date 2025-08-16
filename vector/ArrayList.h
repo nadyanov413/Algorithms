@@ -19,6 +19,9 @@ public:
     int get(int index){
         return values[index];
     }
+    int getSize(){
+        return size;
+    }
     void add(int data){
         ensureCapacity();
         values[size++] = data;

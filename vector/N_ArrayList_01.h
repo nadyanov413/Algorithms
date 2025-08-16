@@ -1,5 +1,6 @@
 #define DEFAULT_CAPACITY 2
 #define EXPAND_FACTOR 2
+#include <cstring>
 
 
 class ArrayList{
@@ -17,6 +18,9 @@ class ArrayList{
         }
         int get(int index){
             return values[index];
+        }
+        int getSize(){
+            return size;
         }
         void add(int data){
             ensureCapacity();

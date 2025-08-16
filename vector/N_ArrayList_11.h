@@ -17,7 +17,7 @@ class ArrayList{
         int get(int index){
             return values[index];
         }
-        int add(int value){
+        void add(int value){
             ensureCapacity();
             values[size++] = value;
 
