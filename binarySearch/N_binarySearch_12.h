@@ -3,13 +3,13 @@
 using namespace std;
 
 class ArrayUtils{
-    public:
+    public: 
     int binarySearch(int arr[], int value, int size){
         int left = 0;
         int right = size - 1;
         int mid;
         while(left < right){
-            mid = (right + left)/ 2;
+            mid = (right + left)/2;
             if(value == arr[mid]){
                 return mid;
             }
