@@ -8,13 +8,12 @@ class ArrayList{
         int size;
         int* values;
     public:
-        ArrayList(): ArrayList(DEFAULT_CAPACITY){}
+        ArrayList():ArrayList(DEFAULT_CAPACITY){}
         ArrayList(int capacity){
             this->capacity = capacity;
             this->size = 0;
             this->values = new int[capacity];
         }
-
         int get(int index){
             return values[index];
         }
@@ -25,12 +24,11 @@ class ArrayList{
         void ensureCapacity(){
             if(size == capacity){
                 capacity *= EXPAND_FACTOR;
-                int* temp  = new int[capacity];
-                memcpy(temp, values,size*sizeof(capacity));
+                int* temp = new int[capacity];
+                memcpy(values, temp , size*sizeof(capacity));
                 delete values;
                 values = temp;
             }
 
         }
-
 };
