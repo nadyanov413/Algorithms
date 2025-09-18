@@ -34,6 +34,6 @@ class Queue{
             last->next = newNode;
             last = newNode;
         }
-
+        
     }
 };
