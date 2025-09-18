@@ -1,0 +1,58 @@
+#include <iostream>
+#include "item.h"
+#define DEFAULT_CAPACITY 1000
+#include <functional> 
+std::hash<std::string> hash_fn;
+
+class hashMap{
+    private:
+    Item** items;
+    int size;
+    int capacity;
+    public:
+    hashMap(): hashMap(DEFAULT_CAPACITY){
+
+    }
+    hashMap(int capacity){
+        this->capacity = capacity;
+        this->size = 0;
+        this->items = new Item*[capacity];
+    }
+    Item* findItem(string key){
+        int index = hash_fn(key)%capacity;
+        Item* item = items[index];
+        while(item != NULL){
+            if(item->key == key){
+                break;
+            }
+            item = item->next;
+        }
+        return item;
+    }
+    int getSize(){
+        return size;
+    }
+    int getIndex(string key){
+        return hash_fn(key)%capacity;
+    }
+    void insert(string key, int value){
+        Item* item = findItem(key);
+        if(item == NULL){
+            int index = hash_fn(key)%capacity;
+            Item* newItem = new Item(key, value);
+            if(item == NULL){
+                items[index] = newItem;
+            }
+            else{
+                newItem->next = items[index];
+                items[index] = newItem;
+
+            }
+            size++;
+        }
+        else{
+            item->value = value;  
+        }
+
+    }
+};
