@@ -18,7 +18,9 @@ class Stack{
         return value;
     }
     void add(int value){
-    
+        Node* newNode = new Node(value);
+        top->next = newNode;
+        top = newNode;
     }
 
 };
