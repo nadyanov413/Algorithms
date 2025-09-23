@@ -1,15 +1,18 @@
 #include "tree.h"
 #include <queue>
 
-class TreeTravesals{
+class TreeTraversals{
+    private:
     public:
     void pre_Order(TreeNode* node){
-        
+        if(node == NULL){
+            return;
+        }
         node->visit();
         pre_Order(node->left);
         pre_Order(node->right);
-    }
 
+    }
     void in_Order(TreeNode* node){
         if(node == NULL){
             return;
@@ -18,14 +21,13 @@ class TreeTravesals{
         node->visit();
         in_Order(node->right);
     }
-
+    
     void post_Order(TreeNode* node){
         if(node == NULL){
             return;
         }
         post_Order(node->left);
         post_Order(node->right);
-        node->visit();
     }
     void level_Order(TreeNode* node){
         queue<TreeNode*> q;
@@ -45,5 +47,4 @@ class TreeTravesals{
         }
 
     }
-
 };
