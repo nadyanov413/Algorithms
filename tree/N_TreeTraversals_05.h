@@ -28,6 +28,7 @@ class TreeTraversals{
         }
         post_Order(node->left);
         post_Order(node->right);
+        node->visit();
     }
     void level_Order(TreeNode* node){
         queue<TreeNode*> q;

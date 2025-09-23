@@ -4,7 +4,9 @@
 class TreeTravesals{
     public:
     void pre_Order(TreeNode* node){
-        
+        if(node == NULL){
+            return;
+        }
         node->visit();
         pre_Order(node->left);
         pre_Order(node->right);
